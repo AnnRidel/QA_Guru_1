@@ -35,15 +35,15 @@ public class TestForm {
         $("#subjectsInput").setValue("Computer Science").pressEnter();       $(byText("Submit")).scrollTo();
         $("#hobbiesWrapper").$(byText("Reading")).click();
         $("#hobbiesWrapper").$(byText("Music")).click();
-        $("#uploadPicture").uploadFile (new File("src/test/java/files/sampleFile.jpeg"));
+        $("#uploadPicture").uploadFile (new File("src/test/resources/sampleFile.jpeg"));
         $("#currentAddress").setValue("Somewhere");
         $("#state").click();
         $("#react-select-3-input").val("NCR").pressEnter();
         $("#city").click();
         $("#react-select-4-input").val("Noida").pressEnter();
         $("#submit").click();
-        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
 
+        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $$("tbody tr").filter(text("Student name")).shouldHave(texts("Ivan Ivanov"));
         $$("tbody tr").filter(text("Student Email")).shouldHave(texts("ivan@ivanov.ru"));
         $$("tbody tr").filter(text("Gender")).shouldHave(texts("Other"));

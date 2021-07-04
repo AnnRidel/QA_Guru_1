@@ -4,7 +4,7 @@
 # Log file
 *.log
 
-# BlueJ files
+# BlueJ resources
 *.ctxt
 
 # Mobile Tools for Java (J2ME)
@@ -20,7 +20,7 @@
 *.rar
 *.iml
 
-# Project gen files
+# Project gen resources
 .idea
 .allure/
 .gradle/
