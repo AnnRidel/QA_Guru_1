@@ -42,11 +42,15 @@ public class RandomUtils {
 
     public String getRandomCity(String state) {
         //выбор города зависит от выбранного штата
-        switch (state){
-            case "NCR": return getRandomString(new String[]{"Delhi", "Gurgaon", "Noida"});
-            case "Uttar Pradesh": return getRandomString(new String[]{"Agra", "Lucknow", "Merrut"});
-            case "Haryana": return getRandomString(new String[]{"Karnal", "Panipat"});
-            case "Rajasthan": return getRandomString(new String[]{"Jaipur", "Jaiselmer"});
+        switch (state) {
+            case "NCR":
+                return getRandomString(new String[]{"Delhi", "Gurgaon", "Noida"});
+            case "Uttar Pradesh":
+                return getRandomString(new String[]{"Agra", "Lucknow", "Merrut"});
+            case "Haryana":
+                return getRandomString(new String[]{"Karnal", "Panipat"});
+            case "Rajasthan":
+                return getRandomString(new String[]{"Jaipur", "Jaiselmer"});
 
             default:
                 return getRandomString(new String[]{"Check State"});
@@ -73,11 +77,17 @@ public class RandomUtils {
     public String getRandomDay(String year, String month) {
         //максимальное число дней зависит от месяца и от того, является ли год високосным (для февраля)
         int chekYear = Integer.parseInt(year);
+        int day;
         if (month.equals("February")) {
             if ((chekYear % 400 == 0) || ((chekYear % 4 == 0) && (chekYear % 100 != 0))) {
-                return Integer.toString(getRandomNumber(1, 29));
+                day = (getRandomNumber(1, 29));
             } else {
-                return Integer.toString(getRandomNumber(1, 28));
+                day = (getRandomNumber(1, 28));
+            }
+            if (day < 10) {
+                return ("0" + day);
+            } else {
+                return Integer.toString(day);
             }
         } else {
             switch (month) {
@@ -88,14 +98,24 @@ public class RandomUtils {
                 case "August":
                 case "October":
                 case "December":
-                    return Integer.toString(getRandomNumber(1, 31));
+                    day = (getRandomNumber(1, 31));
+                    if (day < 10) {
+                        return ("0" + day);
+                    } else {
+                        return Integer.toString(day);
+                    }
                 case "April":
                 case "June":
                 case "September":
                 case "November":
-                    return Integer.toString(getRandomNumber(1, 30));
+                    day = (getRandomNumber(1, 30));
+                    if (day < 10) {
+                        return ("0" + day);
+                    } else {
+                        return Integer.toString(day);
+                    }
                 default:
-                    return Integer.toString(getRandomNumber(1, 28));
+                    return Integer.toString(getRandomNumber(10, 28));
             }
         }
     }
