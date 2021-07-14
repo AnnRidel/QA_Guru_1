@@ -46,9 +46,8 @@ public class TestForm {
                 .typeSubject(subject)
                 .selectHobbies(hobby)
                 .uploadFile("src/test/resources/" + file)
-                .typeAddress(address);
-        registrationPage.scrollPage();
-        registrationPage.selectState(state)
+                .typeAddress(address)
+                .selectState(state)
                 .selectCity(city)
                 .submitForm();
 

@@ -73,10 +73,6 @@ public class RegistrationPage {
         return this;
     }
 
-    public void scrollPage() {
-        $(byText("Submit")).scrollTo();
-    }
-
     public RegistrationPage uploadFile(String pathname) {
         $("#uploadPicture").uploadFile(new File(pathname));
         return this;
@@ -89,7 +85,7 @@ public class RegistrationPage {
     }
 
     public RegistrationPage selectState(String state) {
-        $("#state").click();
+        $("#state").scrollTo().click();
         $("#stateCity-wrapper").$(byText(state)).click();
         return this;
     }
